@@ -1,6 +1,6 @@
-# Material-DropView-Android
+# Material-Backdrop-Android
 
-### This library is created based on Dropdrop component from material design.[Backdrop](https://material.io/design/components/backdrop.html)
+### This library is created based on Backdrop component from material design.[Backdrop](https://material.io/design/components/backdrop.html)
 
 ![alt text](https://github.com/kishan2612/Material-DropView-Android/blob/master/images/backdrop1.png)
 ![alt text](https://github.com/kishan2612/Material-DropView-Android/blob/master/images/backdrop2.png)
@@ -19,7 +19,7 @@ allprojects {
 2. Include project as local library
 ```
 dependencies {
-	        implementation 'com.github.kishan2612:Material-DropView-Android:v1.0'
+	        implementation 'com.github.kishan2612:Material-Backdrop-Android:v1.0'
 	}
 ```
 3. Include the widget in your layout
@@ -40,7 +40,7 @@ dependencies {
 
    </com.evolve.backdroplibrary.BackdropContainer>
 ```
-The container must contain only two child or it may throw an Exception.
+### The container must contain only two child or it may throw an Exception.
 The developer can customize the backlayer and frontlayer of their choice. Use public methods to show and hide the backlayer.
 
 4. In onCreate method 
