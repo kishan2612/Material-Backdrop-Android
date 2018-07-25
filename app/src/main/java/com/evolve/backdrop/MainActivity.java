@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar=(Toolbar)findViewById(R.id.testToolbar);
-        setSupportActionBar(toolbar);
+
         backdropContainer =(BackdropContainer)findViewById(R.id.backdropcontainer);
 
 
@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
                 .dropInterpolator(new LinearInterpolator())
                 .dropHeight(height)
                 .build();
+
+        backdropContainer.showBackview();
+        backdropContainer.closeBackview();
 
     }
 }

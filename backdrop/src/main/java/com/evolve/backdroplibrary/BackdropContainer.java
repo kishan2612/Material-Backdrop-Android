@@ -79,13 +79,13 @@ public class BackdropContainer extends FrameLayout {
 
     }
 
-    void showBackview(){
+   public void showBackview(){
 
         toolbarIconClick.open();
     }
 
 
-    void closeBackview(){
+   public void closeBackview(){
 
         toolbarIconClick.close();
     }
