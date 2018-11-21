@@ -19,7 +19,7 @@ allprojects {
 2. Include project as local library
 ```
 dependencies {
-	        implementation 'com.github.kishan2612:Material-Backdrop-Android:v1.1'
+	        implementation 'com.github.kishan2612:Material-Backdrop-Android:v1.1.0'
 	}
 ```
 3. Include the widget in your layout
@@ -69,14 +69,6 @@ The developer can customize the backlayer and frontlayer of their choice. Use pu
  ```
  int height= this.getResources().getDimensionPixelSize(R.dimen.sneek_height);
  ```
- ### Public methods
- 
-To show back layout :
-```backdropContainer.showBackview();```
-
-To hide the back layout : 
-```backdropContainer.closeBackview(); ```
-
 ### Compatabiliy
 
 Api 16+
