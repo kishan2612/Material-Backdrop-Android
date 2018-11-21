@@ -1,5 +1,6 @@
 package com.evolve.backdrop;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -28,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
                 .dropHeight(height)
                 .build();
 
-//        backdropContainer.showBackview();
-//        backdropContainer.closeBackview();
+
 
     }
 }

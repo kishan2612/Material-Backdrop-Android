@@ -16,19 +16,19 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 
-public class BackdropContainer extends FrameLayout {
+ public class BackdropContainer extends FrameLayout implements BackdropActions {
 
     private Context context;
     private Toolbar toolbar;
     private ToolbarIconClick toolbarIconClick;
     private Drawable mMenuicon;
     private Drawable mCloseicon;
-    int height;
+    private int height;
 
 
     Interpolator interpolator;
     int duration;
-    public BackdropContainer(@NonNull Context context, @Nullable AttributeSet attrs) {
+    protected BackdropContainer(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         this.context=context;
@@ -47,9 +47,6 @@ public class BackdropContainer extends FrameLayout {
 
 
     }
-
-
-
 
     public BackdropContainer attachToolbar(Toolbar toolbar){
 
@@ -86,17 +83,6 @@ public class BackdropContainer extends FrameLayout {
         return frontViewtopMargin;
     }
 
-    public void showBackview(){
-
-        toolbarIconClick.open();
-    }
-
-
-   public void closeBackview(){
-
-        toolbarIconClick.close();
-    }
-
     boolean checkTotalview(){
         if (getChildCount()>2){
             return false;
@@ -118,4 +104,13 @@ public class BackdropContainer extends FrameLayout {
     }
 
 
-}
+     @Override
+     public void showBackview() {
+         toolbarIconClick.open();
+     }
+
+     @Override
+     public void closeBackview() {
+        toolbarIconClick.close();
+     }
+ }

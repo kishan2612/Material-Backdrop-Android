@@ -22,8 +22,8 @@ public class ToolbarIconClick implements View.OnClickListener {
     private AnimatorSet animatorSet=new AnimatorSet();
     private AppCompatImageButton toolbaricon;
 
-    public ToolbarIconClick(Context context, View frontview, View backview, Drawable mMenuicon,
-                            Drawable mCloseicon, int height, Interpolator interpolator, int duration) {
+    protected ToolbarIconClick(Context context, View frontview, View backview, Drawable mMenuicon,
+                               Drawable mCloseicon, int height, Interpolator interpolator, int duration) {
 
         this.context=context;
         this.frontlayer=frontview;
