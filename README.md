@@ -19,7 +19,7 @@ allprojects {
 2. Include project as local library
 ```
 dependencies {
-	        implementation 'com.github.kishan2612:Material-Backdrop-Android:v1.0'
+	        implementation 'com.github.kishan2612:Material-Backdrop-Android:v1.1'
 	}
 ```
 3. Include the widget in your layout
