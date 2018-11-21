@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
                 .dropHeight(height)
                 .build();
 
-        backdropContainer.showBackview();
-        backdropContainer.closeBackview();
+//        backdropContainer.showBackview();
+//        backdropContainer.closeBackview();
 
     }
 }

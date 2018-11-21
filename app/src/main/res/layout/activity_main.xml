@@ -11,6 +11,7 @@
         android:id="@+id/testToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
        />
    <com.evolve.backdroplibrary.BackdropContainer
        android:layout_width="match_parent"
@@ -18,7 +19,8 @@
        android:id="@+id/backdropcontainer"
        app:menuIcon="@drawable/ic_menu_24px"
        app:closeIcon="@drawable/ic_close_24px"
-       app:duration="500">
+       app:duration="500"
+       >
 
        <include layout="@layout/backlayer"/>
        <include layout="@layout/frontlayer"/>

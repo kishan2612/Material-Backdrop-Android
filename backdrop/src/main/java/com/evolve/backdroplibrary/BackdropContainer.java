@@ -2,6 +2,7 @@ package com.evolve.backdroplibrary;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
@@ -9,7 +10,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 
@@ -21,6 +24,7 @@ public class BackdropContainer extends FrameLayout {
     private Drawable mMenuicon;
     private Drawable mCloseicon;
     int height;
+
 
     Interpolator interpolator;
     int duration;
@@ -40,14 +44,17 @@ public class BackdropContainer extends FrameLayout {
         DisplayMetrics metrics=new DisplayMetrics();
         ((Activity)context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
         height=metrics.heightPixels;
+
+
     }
+
+
 
 
     public BackdropContainer attachToolbar(Toolbar toolbar){
 
         this.toolbar=toolbar;
         this.toolbar.setNavigationIcon(mMenuicon);
-
         return  this;
     }
 
@@ -63,23 +70,23 @@ public class BackdropContainer extends FrameLayout {
 
     public void build(){
 
-
-
         if (checkTotalview()){
-
 
             toolbarIconClick =new ToolbarIconClick(context,getChildAt(1),getBackview(),mMenuicon,
                     mCloseicon,height,interpolator,duration);
-
             toolbar.setNavigationOnClickListener(toolbarIconClick);
         }else {
-
             throw new ArrayIndexOutOfBoundsException("Backdrop should contain only two child");
         }
-
     }
 
-   public void showBackview(){
+    private int getFrontViewMargin() {
+        ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) getFrontview().getLayoutParams();
+        int frontViewtopMargin = layoutParams.topMargin;
+        return frontViewtopMargin;
+    }
+
+    public void showBackview(){
 
         toolbarIconClick.open();
     }
@@ -102,6 +109,12 @@ public class BackdropContainer extends FrameLayout {
     }
     View getBackview(){
         return getChildAt(0);
+    }
+
+    private int dpToPx(int topmargin){
+        Resources resources=getResources();
+        float topMArginPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,topmargin,resources.getDisplayMetrics());
+        return (int) topMArginPixels;
     }
 
 

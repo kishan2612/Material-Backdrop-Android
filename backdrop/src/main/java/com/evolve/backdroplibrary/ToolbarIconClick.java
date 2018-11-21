@@ -15,13 +15,9 @@ public class ToolbarIconClick implements View.OnClickListener {
     private View frontlayer;
     private Drawable hambergerIcon;
     private Drawable closeIcon;
-
     private int translate;
-
     private Interpolator interpolator;
-
     private int anim_duration;
-
     private boolean dropped=false;
     private AnimatorSet animatorSet=new AnimatorSet();
     private AppCompatImageButton toolbaricon;
@@ -34,10 +30,9 @@ public class ToolbarIconClick implements View.OnClickListener {
         this.backlayer=backview;
         this.hambergerIcon=mMenuicon;
         this.closeIcon=mCloseicon;
-        this.interpolator= interpolator;
+        this.interpolator=interpolator;
         anim_duration=duration;
         this.translate=height;
-
     }
 
     public  void  open(){
@@ -59,21 +54,16 @@ public class ToolbarIconClick implements View.OnClickListener {
         if (toolbaricon==null){
             this.toolbaricon=(AppCompatImageButton) v;
         }
-
-
         dropped=!dropped;
-
         animatorSet.removeAllListeners();
         animatorSet.end();
         animatorSet.cancel();
 
-
         updateIcon(v);
 
-        ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(frontlayer,"translationY",dropped? translate:0);
-
+        ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(frontlayer,"translationY",
+                dropped? translate:0);
         animatorSet.play(objectAnimator);
-
         objectAnimator.setDuration(anim_duration);
         objectAnimator.setInterpolator(interpolator);
         objectAnimator.start();
@@ -88,4 +78,6 @@ public class ToolbarIconClick implements View.OnClickListener {
             }
         }
     }
+
+
 }
