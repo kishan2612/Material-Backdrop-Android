@@ -28,7 +28,7 @@ import android.widget.FrameLayout;
 
     Interpolator interpolator;
     int duration;
-    protected BackdropContainer(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public BackdropContainer(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         this.context=context;
