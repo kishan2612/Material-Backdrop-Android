@@ -75,8 +75,8 @@ Api 16+
 
 ## ChangeLog
 
-#### V1.0 :
-      Initial build.
+#### V1.1 :
+      crash fixed.
       
 # License
 
