@@ -69,6 +69,11 @@ The developer can customize the backlayer and frontlayer of their choice. Use pu
  ```
  int height= this.getResources().getDimensionPixelSize(R.dimen.sneek_height);
  ```
+### Public Methods
+```
+backdropContainer.showBackview();
+backdropContainer.closeBackview();
+```
 ### Compatabiliy
 
 Api 16+
