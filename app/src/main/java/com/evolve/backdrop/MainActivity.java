@@ -4,9 +4,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.animation.LinearInterpolator;
 
 import com.evolve.backdroplibrary.BackdropContainer;
+import com.evolve.backdroplibrary.BackdropStateListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
                 .dropHeight(height)
                 .build();
 
-
+        backdropContainer.setOnStateListener(new BackdropStateListener() {
+            @Override
+            public void onStateChange(boolean dropped) {
+                Log.e("BackdropStateListener","Dropped: " + dropped);
+            }
+        });
 
     }
 }

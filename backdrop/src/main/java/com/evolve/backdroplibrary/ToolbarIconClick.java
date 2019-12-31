@@ -21,9 +21,11 @@ public class ToolbarIconClick implements View.OnClickListener {
     private boolean dropped=false;
     private AnimatorSet animatorSet=new AnimatorSet();
     private AppCompatImageButton toolbaricon;
+    private BackdropStateListener stateListener;
+
 
     public ToolbarIconClick(Context context, View frontview, View backview, Drawable mMenuicon,
-                               Drawable mCloseicon, int height, Interpolator interpolator, int duration) {
+                            Drawable mCloseicon, int height, Interpolator interpolator, int duration) {
 
         this.context=context;
         this.frontlayer=frontview;
@@ -33,6 +35,10 @@ public class ToolbarIconClick implements View.OnClickListener {
         this.interpolator=interpolator;
         anim_duration=duration;
         this.translate=height;
+    }
+
+    public void setStateListener(BackdropStateListener stateListener) {
+        this.stateListener = stateListener;
     }
 
     public  void  open(){
@@ -61,7 +67,7 @@ public class ToolbarIconClick implements View.OnClickListener {
 
         updateIcon(v);
 
-        ObjectAnimator objectAnimator=ObjectAnimator.ofFloat(frontlayer,"translationY",
+        ObjectAnimator objectAnimator= ObjectAnimator.ofFloat(frontlayer,"translationY",
                 dropped? translate:0);
         animatorSet.play(objectAnimator);
         objectAnimator.setDuration(anim_duration);
@@ -76,6 +82,9 @@ public class ToolbarIconClick implements View.OnClickListener {
             }else {
                 toolbaricon.setImageDrawable(hambergerIcon);
             }
+
+            if (stateListener != null)
+                stateListener.onStateChange(dropped);
         }
     }
 
